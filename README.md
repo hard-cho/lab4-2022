@@ -71,12 +71,23 @@
 3. Создать пустой объект MainMenu.
 4. Создать скрипт MainMenu и подключить его к объекту MainMenu.
 5. Создать три кнопки PlayButton, OptionButton и QuitButton. Настроить расположение, размер и внешний вид кнопок. Помесить все кнопки в объект MainMenu.
-6. Редактировать событие On Click. Закинуть объект MainMenu, а вместо No Function назначить PlayGame.
+6. У кнопки PlayButton редактировать событие On Click. Закинуть объект MainMenu, а вместо No Function назначить PlayGame.
 7. В Build Settings добавить сцену.
 8. Проверить, что кнопка Play работает.
 
+
 #### Часть 3 - Доработка меню и функционала с остановкой игры.
 Ход работы:
+1. У кнопки QuitButton редактировать событие On Click. Закинуть объект MainMenu, а вместо No Function назначить QuitGame.
+2. Сделать копию MainMenu и переименовать в SettingMenu.
+3. В SettingMenu сменить имя кнопки QuitButton на BackButton. Остальные кнопки удалить.
+4. У кнопки BackButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у SettingMenu.
+5. У кнопки OptionButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у MainMenu.
+6. Проверить, что всё работает.
+7. Создать скрипт PauseAndEscape и подключить его к Main Camera в _1Scene.
+8. Проверить, что пауза и выход работают.
+9. Добавить текстовое сообщение о паузе. В сцене _1Scene добавить объект Text, назвать его Pause. Настроить расположение и внешний вид текста. По умолчанию объект не должен быть на сцене, поэтому нужно убрать галочку
+10. В Main Camera в скрипте PauseAndEscape в качестве Panel назначить объект Pause.
 
 
 #### Часть 4 - Добавление звукового сопровождения в игре.
