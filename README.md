@@ -55,7 +55,7 @@
 10. У объекта Enemy в компоненте Animator изменить контроллер на DragonIDLE.
 11. Сохранить и проверить.
 12. Загрузить и импортировать из Unity Asset Store пакет Painted HQ 2D Forest Medieval Background.
-13. Создать дубликат объекта cloud02 и переместить его в папку с текстурами. Затем перетащить дубликат в окно иерархии внутрь объекта Canvas.
+13. Создать дубликат объекта cloud02 и переместить его в папку _Textures. Затем перетащить дубликат в окно иерархии внутрь объекта Canvas.
 14. Настроить Transform у объекта cloud02.
 15. Создать облаку анимацию CloudAnimation.
 16. Add Proprty -> transform position.
@@ -92,6 +92,15 @@
 
 #### Часть 4 - Добавление звукового сопровождения в игре.
 Ход работы:
+1. Загрузить и импортировать из Unity Asset Store пакет Free Orchestral Music Pack.
+2. Аудио-файлы Aspiration Woods (Area Theme) и Final Struggle (Boss Theme) переместить в папку _AudioFiles.
+3. В сцене _0Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл Aspiration Woods (Area Theme). Включить свойства Play On Awake и Loop.
+4. Проверить.
+5. В сцене _1Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл AFinal Struggle (Boss Theme). Включить свойства Play On Awake и Loop.
+6. Проверить.
+7. Удалить папку Free Orchestral Music Pack.
+8. Загрузить и импортировать из Unity Asset Store пакет Grenade Sound FX.
+9. 
 
 
 #### Часть 5 - Добавление персонажа и сборка сцены для публикации на web-ресурсе.
