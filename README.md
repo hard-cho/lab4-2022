@@ -100,7 +100,12 @@
 6. Проверить.
 7. Удалить папку Free Orchestral Music Pack.
 8. Загрузить и импортировать из Unity Asset Store пакет Grenade Sound FX.
-9. 
+9. Переместить аудио-файл Grenade2Short в папку _AudioFiles и переименовать в DragonEggExplosion.
+10. К префабу Egg добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggExplosion - та аудио-дорожка будет проигрываться при падении яйца на землю. Выключить свойство Play On Awake.
+11. Модифицировать скрипт DragonEgg, а именно добавить публичную переменную audioSource и добавить строки кода в метод OnTriggerEnter.
+12. Переместить аудио-файл Impact on Snow в папку _AudioFiles и переименовать в DragonEggImpact.
+10. К префабу EnergyShield добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggImpact - эта аудио-дорожка будет проигрываться при пересечении яйца и энергетического щита. Выключить свойство Play On Awake.
+11. Модифицировать скрипт EnergyShield, а именно добавить публичную переменную audioSource и добавить строки кода в метод OnCollisionrEnter.
 
 
 #### Часть 5 - Добавление персонажа и сборка сцены для публикации на web-ресурсе.
