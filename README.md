@@ -57,7 +57,7 @@
 12. Загрузить и импортировать из Unity Asset Store пакет Painted HQ 2D Forest Medieval Background.
 13. Создать дубликат объекта cloud02 и переместить его в папку _Textures. Затем перетащить дубликат в окно иерархии внутрь объекта Canvas.
 14. Настроить Transform у объекта cloud02.
-15. Создать облаку анимацию CloudAnimation.
+15. Создать облаку анимацию CloudAnimation и подключить её к cloud02.
 16. Add Proprty -> transform position.
 17. Передвинуть второй ключевой кадр. Посередине добавить ключ, сдвинув облако левее.
 18. Изменить скорость анимации. CloudAnimation -> speed 0.1.
