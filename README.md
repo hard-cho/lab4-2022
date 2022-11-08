@@ -145,24 +145,24 @@ public class MainMenu : MonoBehaviour
 
 ![событие quit](https://user-images.githubusercontent.com/74662720/200539506-52fa63ce-98f6-4265-824d-22512696419f.png)
 
-3. Сделать копию MainMenu и переименовать в SettingMenu.
-4. В SettingMenu сменить имя кнопки QuitButton на BackButton. Остальные кнопки удалить.
+2. Сделать копию MainMenu и переименовать в SettingMenu.
+3. В SettingMenu сменить имя кнопки QuitButton на BackButton. Остальные кнопки удалить.
 
 ![кнопка back](https://user-images.githubusercontent.com/74662720/200539574-af7ecadd-7689-4c83-9f74-7e3612853514.png)
 
-6. У кнопки BackButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у SettingMenu.
+4. У кнопки BackButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у SettingMenu.
 
 ![backbutton set active](https://user-images.githubusercontent.com/74662720/200539614-bf31577b-0c3f-4401-ac7c-d264d27fe028.png)
 
-8. У кнопки OptionButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у MainMenu.
+5. У кнопки OptionButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у MainMenu.
 
 ![optionbutton set active](https://user-images.githubusercontent.com/74662720/200539677-abfc346b-fa9a-4b26-963b-b543a877e8f8.png)
 
-10. Проверить, что переключение между главным меню и настройками работает.
+6. Проверить, что переключение между главным меню и настройками работает.
 
 ![bandicam 2022-11-08 09-30-12-483](https://user-images.githubusercontent.com/74662720/200540246-a1ec751b-e7b8-4e43-a378-d4962e8e9f94.gif)
 
-12. Создать скрипт PauseAndEscape и подключить его к Main Camera в _1Scene.
+7. Создать скрипт PauseAndEscape и подключить его к Main Camera в _1Scene.
 
 ```c#
 using System.Collections;
@@ -201,8 +201,8 @@ public class PauseAndEscape : MonoBehaviour
     }
 }
 ```
-15. Добавить текстовое сообщение о паузе. В сцене _1Scene добавить объект Text, назвать его Pause. Настроить расположение и внешний вид текста.
-16. В Main Camera в скрипте PauseAndEscape в качестве Panel назначить объект Pause. Проверить работу паузы и выхода в главное меню.
+8. Добавить текстовое сообщение о паузе. В сцене _1Scene добавить объект Text, назвать его Pause. Настроить расположение и внешний вид текста.
+9. В Main Camera в скрипте PauseAndEscape в качестве Panel назначить объект Pause. Проверить работу паузы и выхода в главное меню.
 
 ![bandicam 2022-11-08 15-35-52-230](https://user-images.githubusercontent.com/74662720/200543184-e63a4ad3-cb3d-4878-adf2-56ab9f803cb1.gif)
 
@@ -210,33 +210,81 @@ public class PauseAndEscape : MonoBehaviour
 #### Часть 4 - Добавление звукового сопровождения в игре.
 Ход работы:
 1. Загрузить и импортировать из Unity Asset Store пакет Free Orchestral Music Pack.
+
+![Free Orchestral Music Pack](https://user-images.githubusercontent.com/74662720/200543439-7a0f2163-94ec-4e90-af4a-964a2d71a773.png)
+
 2. Аудио-файлы Aspiration Woods (Area Theme) и Final Struggle (Boss Theme) переместить в папку _AudioFiles.
 3. В сцене _0Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл Aspiration Woods (Area Theme). Включить свойства Play On Awake и Loop.
-4. Проверить.
-5. В сцене _1Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл Final Struggle (Boss Theme). Включить свойства Play On Awake и Loop.
-6. Проверить.
-7. Удалить папку Free Orchestral Music Pack.
-8. Загрузить и импортировать из Unity Asset Store пакет Grenade Sound FX.
-9. Переместить аудио-файл Grenade7Short в папку _AudioFiles и переименовать в DragonEggExplosion.
-10. К префабу Egg добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggExplosion - та аудио-дорожка будет проигрываться при падении яйца на землю. Выключить свойство Play On Awake.
-11. Модифицировать скрипт DragonEgg, а именно добавить публичную переменную audioSource и добавить строки кода в метод OnTriggerEnter.
-12. Переместить аудио-файл Impact on Snow в папку _AudioFiles и переименовать в DragonEggImpact.
-10. К префабу EnergyShield добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggImpact - эта аудио-дорожка будет проигрываться при пересечении яйца и энергетического щита. Выключить свойство Play On Awake.
-11. Модифицировать скрипт EnergyShield, а именно добавить публичную переменную audioSource и добавить строки кода в метод OnCollisionrEnter.
+
+![maincamera 0scene](https://user-images.githubusercontent.com/74662720/200543541-ca305d53-3065-40ab-a5bd-de68975c9547.png)
+
+4. В сцене _1Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл Final Struggle (Boss Theme). Включить свойства Play On Awake и Loop.
+
+![maincamera 1scene](https://user-images.githubusercontent.com/74662720/200543579-5e81329f-9661-4fab-8c84-d9413aab79f1.png)
+
+5. Удалить папку Free Orchestral Music Pack.
+6. Загрузить и импортировать из Unity Asset Store пакет Grenade Sound FX.
+
+![Grenade Sound FX](https://user-images.githubusercontent.com/74662720/200543627-c128b646-170e-4b2e-803a-604ce1456264.png)
+
+7. Переместить аудио-файл Grenade7Short в папку _AudioFiles и переименовать в DragonEggExplosion.
+8. К префабу Egg добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggExplosion - эта аудио-дорожка будет проигрываться при падении яйца на землю. Выключить свойство Play On Awake.
+
+![назначили взрыв яйцу](https://user-images.githubusercontent.com/74662720/200543692-105d8c36-cfac-473d-81d2-4f08a38da662.png)
+
+9. Модифицировать скрипт DragonEgg, а именно добавить публичную переменную audioSource 
+```c#
+public AudioSource audioSource;
+```
+и добавить строки кода в метод OnTriggerEnter.
+
+```c#
+audioSource = GetComponent<AudioSource>();
+audioSource.Play();
+```
+10. Переместить аудио-файл Impact on Snow в папку _AudioFiles и переименовать в DragonEggImpact.
+11. К префабу EnergyShield добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggImpact - эта аудио-дорожка будет проигрываться при пересечении яйца и энергетического щита. Выключить свойство Play On Awake.
+
+![назначили звук щиту](https://user-images.githubusercontent.com/74662720/200543793-da587046-0325-4868-b80f-7a4a18e46fc2.png)
+
+12. Модифицировать скрипт EnergyShield, а именно добавить публичную переменную audioSource и добавить строки кода в метод OnCollisionrEnter (см. код в пункте 9).
 
 
 #### Часть 5 - Добавление персонажа и сборка сцены для публикации на web-ресурсе.
 Ход работы:
 1. Удалить ненужные ассетпаки, текстуры перетащить в папку _Textures.
-2. Скачать модель персонажа с сайта mixamo.com во вкладке Characters. 
-3. Во вкладке Animations найти подходящюю анимацию. Загрузить.
-4. Скачанный файл поместить в папку _Prefabs и переименовать.
-5. Поместить персонажа в _1Scene, настроить компонент Transform.
-6. Извлечь текструры.
-7. Продублировать анимацию из персонажа, переименовать и переместить в папку _Animations. Включить свойство Loop Time.
-8. Создать контроллер анимации, перекинуть в этот контроллер анимацию. Подключить контроллер к персонажу.
+2. На сайте mixamo.com выбрать персонажа и анимацию. Загрузить. 
+
+![выбрала позу](https://user-images.githubusercontent.com/74662720/200545293-dbe63456-80e1-4c48-bce6-1b3f890cbb6f.png)
+
+3. Скачанный файл поместить в папку _Prefabs и переименовать.
+
+![перс в папке](https://user-images.githubusercontent.com/74662720/200545316-ef391f6d-05f8-4c32-9fd9-e3904e004d80.png)
+
+4. Поместить персонажа в _1Scene, настроить компонент Transform.
+
+![transform withc](https://user-images.githubusercontent.com/74662720/200545347-71d004cf-f3bf-4be4-967a-80cc1b76f6a5.png)
+
+5. Извлечь текструры.
+6. Продублировать анимацию из персонажа, переименовать и переместить в папку _Animations. Включить свойство Loop Time.
+
+![извлекли переименовали зациклили](https://user-images.githubusercontent.com/74662720/200545392-36e7d577-969d-4b22-a9f9-2948673d0b9b.png)
+
+7. Создать контроллер анимации, перекинуть в этот контроллер анимацию.
+
+![создали контроллер и поместили анимацию туда](https://user-images.githubusercontent.com/74662720/200545439-6ebad58a-4978-4977-afbf-5bbeb8b92a00.png)
+
+8. Подключить контроллер к персонажу.
+
+![контроллер подключён к персу](https://user-images.githubusercontent.com/74662720/200545453-4a6063d3-7fc2-4426-a211-d4c94c0d5fa1.png)
+
 9. Добавить точечный источник освещения и настроить его.
-10. Собрать проект для платформы WebGL и проверить работу приложения в браузере. Если нужно, подредактировать сцену и пересобрать проект
+
+![добавили точку света](https://user-images.githubusercontent.com/74662720/200545466-e3a46e8e-a6c7-4986-abc4-89fdbd8ac302.png)
+
+10. Собрать проект для платформы WebGL и проверить работу приложения в браузере.
+
+https://user-images.githubusercontent.com/74662720/200545611-f63f7393-5ff8-4997-a668-1dcaf448fe04.mp4
 
 
 ## Задание 3
