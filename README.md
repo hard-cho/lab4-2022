@@ -8,7 +8,7 @@
 | Задание | Выполнение | Баллы |
 | ------ | ------ | ------ |
 | Задание 1 | * | 60 |
-| Задание 2 | * | 20 |
+| Задание 2 | # | 20 |
 | Задание 3 | * | 20 |
 
 знак "*" - задание выполнено; знак "#" - задание не выполнено;
@@ -49,19 +49,50 @@
 4. В Main Camera удалить подключенный скрипт DragonPicker.
 5. У объекта Enemy удалить скрипт EnemyDragon.
 6. Настроить Transform у объекта DragonMountain.
+
+![transform mountain](https://user-images.githubusercontent.com/74662720/200521900-90a527ca-12b7-471c-9f03-f73126121e38.png)
+
 7. Настроить Transform у объекта Enemy.
-8. Создать контроллер для анимации дракона DragonIDLE.
-9. Перетянуть анимацию idle01 в контроллер.
-10. У объекта Enemy в компоненте Animator изменить контроллер на DragonIDLE.
-11. Сохранить и проверить.
-12. Загрузить и импортировать из Unity Asset Store пакет Painted HQ 2D Forest Medieval Background.
-13. Создать дубликат объекта cloud02 и переместить его в папку _Textures. Затем перетащить дубликат в окно иерархии внутрь объекта Canvas.
-14. Настроить Transform у объекта cloud02.
-15. Создать облаку анимацию CloudAnimation и подключить её к cloud02.
-16. Add Proprty -> transform position.
-17. Передвинуть второй ключевой кадр. Посередине добавить ключ, сдвинув облако левее.
-18. Изменить скорость анимации. CloudAnimation -> speed 0.1.
-19. Добавить облаку компонент Rect Transform, то есть настроить "якорь".
+
+![transform enemy](https://user-images.githubusercontent.com/74662720/200521951-fc1f5127-e288-427c-8494-c6b2d1f6f9c7.png)
+
+8. Создать контроллер для анимации дракона DragonIDLE и перетянуть анимацию idle01 в контроллер.
+
+![idle01](https://user-images.githubusercontent.com/74662720/200522210-4cf7e154-5d5a-47f6-82f2-953fdf9138ff.png)
+
+9. У объекта Enemy в компоненте Animator изменить контроллер на DragonIDLE.
+
+![изменили контроллер](https://user-images.githubusercontent.com/74662720/200522266-12fb5afd-053e-4513-8777-f2650a3bb810.png)
+
+10. Сохранить и проверить. Теперь дракон стоит рядом с горой в ожидании.
+
+![bandicam 2022-11-07 15-27-57-994](https://user-images.githubusercontent.com/74662720/200522867-e48eaaf3-3be3-4326-9f20-fb0a78f1631d.gif)
+
+11. Загрузить и импортировать из Unity Asset Store пакет Painted HQ 2D Forest Medieval Background.
+
+![Painted HQ 2D Forest Medieval Background](https://user-images.githubusercontent.com/74662720/200523122-305c8b25-e288-40da-80c4-d153ed763a15.png)
+
+12. Создать дубликат объекта cloud02 и переместить его в папку _Textures. Затем перетащить дубликат в окно иерархии внутрь объекта Canvas.
+
+![облако и там и тут](https://user-images.githubusercontent.com/74662720/200523166-3091abd6-bbb2-453b-a187-b8610c8f1c46.png)
+
+13. Настроить Transform у объекта cloud02.
+
+![transform cloud](https://user-images.githubusercontent.com/74662720/200523204-a239f126-4cc6-4029-b609-aa3e625ac933.png)
+
+14. Создать облаку анимацию CloudAnimation и подключить её к cloud02.
+15. Add Proprty -> transform position. Передвинуть второй ключевой кадр. Посередине добавить ключ, сдвинув облако в сторону.
+
+![bandicam 2022-11-07 15-46-59-646](https://user-images.githubusercontent.com/74662720/200524003-2849705e-0a78-48ca-84cb-56f2c6105e86.gif)
+
+16. Изменить скорость анимации. CloudAnimation -> speed 0.02.
+
+![сменили скорость](https://user-images.githubusercontent.com/74662720/200523746-130c262d-714e-427e-b341-623e18024fd6.png)
+
+17. Добавить облаку компонент Rect Transform, то есть настроить "якорь".
+
+![rect transform](https://user-images.githubusercontent.com/74662720/200523288-d8e90a93-798c-47cd-8b9a-bbfe8c927deb.png)
+
 
 
 #### Часть 2 - Создание стартовой сцены и переключение между ними.
