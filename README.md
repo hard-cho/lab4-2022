@@ -126,7 +126,7 @@ public class MainMenu : MonoBehaviour
 }
 ```
 
-8. Создать три кнопки PlayButton, OptionButton и QuitButton. Настроить расположение, размер и внешний вид кнопок. Помесить все кнопки в объект MainMenu.
+8. Создать три кнопки PlayButton, OptionButton и QuitButton. Настроить расположение, размер и внешний вид кнопок. Поместить все кнопки в объект MainMenu.
 
 ![кнопки в главном меню](https://user-images.githubusercontent.com/74662720/200538550-7c53be2d-53d7-49f8-bee7-583cda0a4da9.png)
 
