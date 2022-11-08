@@ -96,11 +96,11 @@
 2. Аудио-файлы Aspiration Woods (Area Theme) и Final Struggle (Boss Theme) переместить в папку _AudioFiles.
 3. В сцене _0Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл Aspiration Woods (Area Theme). Включить свойства Play On Awake и Loop.
 4. Проверить.
-5. В сцене _1Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл AFinal Struggle (Boss Theme). Включить свойства Play On Awake и Loop.
+5. В сцене _1Scene к MainCamera добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл Final Struggle (Boss Theme). Включить свойства Play On Awake и Loop.
 6. Проверить.
 7. Удалить папку Free Orchestral Music Pack.
 8. Загрузить и импортировать из Unity Asset Store пакет Grenade Sound FX.
-9. Переместить аудио-файл Grenade2Short в папку _AudioFiles и переименовать в DragonEggExplosion.
+9. Переместить аудио-файл Grenade7Short в папку _AudioFiles и переименовать в DragonEggExplosion.
 10. К префабу Egg добавить компонент Audio Source, в качестве AudioClip назначить аудио-файл DragonEggExplosion - та аудио-дорожка будет проигрываться при падении яйца на землю. Выключить свойство Play On Awake.
 11. Модифицировать скрипт DragonEgg, а именно добавить публичную переменную audioSource и добавить строки кода в метод OnTriggerEnter.
 12. Переместить аудио-файл Impact on Snow в папку _AudioFiles и переименовать в DragonEggImpact.
