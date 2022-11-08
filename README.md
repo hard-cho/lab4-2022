@@ -32,7 +32,6 @@
   - Часть 3 - Доработка меню и функционала с остановкой игры.
   - Часть 4 - Добавление звукового сопровождения в игре.
   - Часть 5 - Добавление персонажа и сборка сцены для публикации на web-ресурсе.
-- Задание 2.
 - Задание 3.
 - Выводы.
 
@@ -94,7 +93,6 @@
 ![rect transform](https://user-images.githubusercontent.com/74662720/200523288-d8e90a93-798c-47cd-8b9a-bbfe8c927deb.png)
 
 
-
 #### Часть 2 - Создание стартовой сцены и переключение между ними.
 Ход работы:
 1. Добавить текст в Canvas. Назвать объект Title.
@@ -107,24 +105,104 @@
 
 5. Создать пустой объект MainMenu.
 6. Создать скрипт MainMenu и подключить его к объекту MainMenu.
-7. Создать три кнопки PlayButton, OptionButton и QuitButton. Настроить расположение, размер и внешний вид кнопок. Помесить все кнопки в объект MainMenu.
-8. У кнопки PlayButton редактировать событие On Click. Закинуть объект MainMenu, а вместо No Function назначить PlayGame.
-9. В Build Settings добавить сцену.
-10. Проверить, что кнопка Play работает.
+
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MainMenu : MonoBehaviour
+{
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+}
+```
+
+8. Создать три кнопки PlayButton, OptionButton и QuitButton. Настроить расположение, размер и внешний вид кнопок. Помесить все кнопки в объект MainMenu.
+
+![кнопки в главном меню](https://user-images.githubusercontent.com/74662720/200538550-7c53be2d-53d7-49f8-bee7-583cda0a4da9.png)
+
+10. У кнопки PlayButton редактировать событие On Click. Закинуть объект MainMenu, а вместо No Function назначить PlayGame.
+
+![собыитие](https://user-images.githubusercontent.com/74662720/200538685-bb1c16ca-9d1f-48c6-bba9-770e548611fe.png)
+
+13. Проверить, что кнопка Play работает.
+
+![bandicam 2022-11-07 16-55-29-401](https://user-images.githubusercontent.com/74662720/200539394-cb6a2e0d-16c3-43e1-9f2c-eaee8a26255f.gif)
 
 
 #### Часть 3 - Доработка меню и функционала с остановкой игры.
 Ход работы:
 1. У кнопки QuitButton редактировать событие On Click. Закинуть объект MainMenu, а вместо No Function назначить QuitGame.
-2. Сделать копию MainMenu и переименовать в SettingMenu.
-3. В SettingMenu сменить имя кнопки QuitButton на BackButton. Остальные кнопки удалить.
-4. У кнопки BackButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у SettingMenu.
-5. У кнопки OptionButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у MainMenu.
-6. Проверить, что всё работает.
-7. Создать скрипт PauseAndEscape и подключить его к Main Camera в _1Scene.
-8. Проверить, что пауза и выход работают.
-9. Добавить текстовое сообщение о паузе. В сцене _1Scene добавить объект Text, назвать его Pause. Настроить расположение и внешний вид текста. По умолчанию объект не должен быть на сцене, поэтому нужно убрать галочку
-10. В Main Camera в скрипте PauseAndEscape в качестве Panel назначить объект Pause.
+
+![событие quit](https://user-images.githubusercontent.com/74662720/200539506-52fa63ce-98f6-4265-824d-22512696419f.png)
+
+3. Сделать копию MainMenu и переименовать в SettingMenu.
+4. В SettingMenu сменить имя кнопки QuitButton на BackButton. Остальные кнопки удалить.
+
+![кнопка back](https://user-images.githubusercontent.com/74662720/200539574-af7ecadd-7689-4c83-9f74-7e3612853514.png)
+
+6. У кнопки BackButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у SettingMenu.
+
+![backbutton set active](https://user-images.githubusercontent.com/74662720/200539614-bf31577b-0c3f-4401-ac7c-d264d27fe028.png)
+
+8. У кнопки OptionButton в событии On Click создать два листа для MainMenu и SettingMenu, в обоих листах вместо No Function назначить SetActive. Убрать галочку у MainMenu.
+
+![optionbutton set active](https://user-images.githubusercontent.com/74662720/200539677-abfc346b-fa9a-4b26-963b-b543a877e8f8.png)
+
+10. Проверить, что переключение между главным меню и настройками работает.
+
+![bandicam 2022-11-08 09-30-12-483](https://user-images.githubusercontent.com/74662720/200540246-a1ec751b-e7b8-4e43-a378-d4962e8e9f94.gif)
+
+12. Создать скрипт PauseAndEscape и подключить его к Main Camera в _1Scene.
+
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PauseAndEscape : MonoBehaviour
+{
+    private bool paused = false;
+    public GameObject panel;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(!paused)
+            {
+                Time.timeScale = 0;
+                paused = true;
+                panel.SetActive(true);
+            }
+
+            else
+            {
+                Time.timeScale = 1;
+                paused = false;
+                panel.SetActive(false);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
+}
+```
+15. Добавить текстовое сообщение о паузе. В сцене _1Scene добавить объект Text, назвать его Pause. Настроить расположение и внешний вид текста. По умолчанию объект не должен быть на сцене, поэтому нужно убрать галочку
+16. В Main Camera в скрипте PauseAndEscape в качестве Panel назначить объект Pause.
 
 
 #### Часть 4 - Добавление звукового сопровождения в игре.
@@ -157,16 +235,6 @@
 8. Создать контроллер анимации, перекинуть в этот контроллер анимацию. Подключить контроллер к персонажу.
 9. Добавить точечный источник освещения и настроить его.
 10. Собрать проект для платформы WebGL и проверить работу приложения в браузере. Если нужно, подредактировать сцену и пересобрать проект
-
-
-
-## Задание 2
-### Привести описание того, как происходит сборка проекта проекта под другие платформы. Какие могут быть особенности?
-Ход работы:
-
-
-
-
 
 
 ## Задание 3
